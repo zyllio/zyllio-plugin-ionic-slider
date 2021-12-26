@@ -49,7 +49,6 @@ export class SliderComponent extends HTMLElement {
     this.htmlElement.className = 'content';
     this.styleElement = document.createElement('style');
     this.htmlElement.innerHTML = HtmlContent
-
   }
 
   connectedCallback() {
@@ -88,19 +87,22 @@ export class SliderComponent extends HTMLElement {
 
   refresh() {
 
-    const propertyValue = zySdk.services.factory.getPropertyValue(this, 'value')
-
-    let value = zySdk.services.dictionary.getValue(propertyValue)
-
-    if (value === undefined) {
-      value = 0
-    }
-
-    const slider = this.shadow.querySelector('ion-range')
-
-    if(slider) {
-      slider.value = value
-    }
+    setTimeout( () => {
+      
+      const propertyValue = zySdk.services.factory.getPropertyValue(this, 'value')
+  
+      let value = zySdk.services.dictionary.getValue(propertyValue)
+  
+      if (value === undefined) {
+        value = 0
+      }
+  
+      const slider = this.shadow.querySelector('ion-range')
+  
+      if(slider) {
+        slider.value = value
+      }
+    })
 
   }
 }

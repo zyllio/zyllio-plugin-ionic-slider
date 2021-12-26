@@ -3,8 +3,11 @@ import { initialize } from "@ionic/core/components";
 
 import { SliderComponent } from './slider.component'
 
-console.log('SliderComponent: ', SliderComponent);
+// Prevent Treeshaking
+console.debug(SliderComponent);
 
 initialize();
 
-customElements.define("ion-range", IonRange);
+if(!customElements.get("ion-range")) {
+  customElements.define("ion-range", IonRange);
+}

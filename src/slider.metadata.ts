@@ -31,7 +31,7 @@ export const SliderMetadata: ComponentMetadataModel = {
     id: 'height',
     name: 'Height',
     type: 'height',
-    default: '30px'
+    default: '100px'
   }
   ]
 }
