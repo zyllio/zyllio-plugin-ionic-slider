@@ -13,6 +13,10 @@ const CssContent = `
     height: 100%; 
   }
 
+  :host-context(body[editor]) .content {
+    pointer-events: none;
+  }
+
   .ion-color-secondary {
     font-family: 'Roboto';
     --ion-color-base: var(--ion-color-secondary, #3dc2ff)!important;
@@ -58,7 +62,20 @@ export class SliderComponent extends HTMLElement {
 
     this.styleElement.innerHTML = CssContent;
 
-    this.refresh();
+    this.refresh()
+
+    setTimeout( () => this.init())
+  }
+
+  static get observedAttributes() {
+    return ['data-value'];
+  }
+
+  attributeChangedCallback() {
+    this.refresh()
+  }
+
+  init() {
 
     const propertyValue = zySdk.services.factory.getPropertyValue(this, 'value')
 
@@ -75,14 +92,6 @@ export class SliderComponent extends HTMLElement {
       zySdk.services.dictionary.setValue(propertyValue, value)
     })
 
-  }
-
-  static get observedAttributes() {
-    return ['data-value'];
-  }
-
-  attributeChangedCallback() {
-    this.refresh()
   }
 
   refresh() {
