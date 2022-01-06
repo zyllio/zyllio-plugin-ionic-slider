@@ -1,6 +1,8 @@
 # Zyllio Plugin Ionic Slider
 
-This project is a Zyllio plugin that embeds an Ionic component [Ionic Slider](https://ionicframework.com/docs/api/range)
+This Zyllio plugin is a Component that embeds an Ionic component [Ionic Slider](https://ionicframework.com/docs/api/range)
+
+The property `value` is updated by the Slider component
 
 # Demonstration
 
