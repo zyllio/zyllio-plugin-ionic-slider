@@ -63,7 +63,7 @@ export class SliderComponent extends HTMLElement {
 
     this.refresh()
 
-    setTimeout( () => this.init())
+    setTimeout(() => this.init())
   }
 
   static get observedAttributes() {
@@ -95,19 +95,19 @@ export class SliderComponent extends HTMLElement {
 
   refresh() {
 
-    setTimeout( () => {
-      
+    setTimeout(() => {
+
       const propertyValue = zySdk.services.component.getPropertyValue(this, 'value')
-  
+
       let value = zySdk.services.dictionary.getValue(propertyValue)
-  
+
       if (value === undefined) {
         value = 0
       }
-  
+
       const slider = this.shadow.querySelector('ion-range')
-  
-      if(slider) {
+
+      if (slider) {
         slider.value = value
 
         const snap = zySdk.services.component.getPropertyValueAsText(this, 'snap')
