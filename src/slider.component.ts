@@ -19,21 +19,20 @@ const CssContent = `
 
   .ion-color-secondary {
     font-family: 'Roboto';
-    --ion-color-base: var(--ion-color-secondary, #3dc2ff)!important;
-    --ion-color-base-rgb: var(--ion-color-secondary-rgb, 61, 194, 255)!important;
-    --ion-color-contrast: var(--ion-color-secondary-contrast, #fff)!important;
-    --ion-color-contrast-rgb: var(--ion-color-secondary-contrast-rgb, 255, 255, 255)!important;
-    --ion-color-shade: var(--ion-color-secondary-shade, #36abe0)!important;
-    --ion-color-tint: var(--ion-color-secondary-tint, #50c8ff)!important;
+    --ion-color-base: var(--ion-color-secondary, #3dc2ff) !important;
+    --ion-color-base-rgb: var(--ion-color-secondary-rgb, 61, 194, 255) !important;
+    --ion-color-contrast: var(--ion-color-secondary-contrast, #fff) !important;
+    --ion-color-contrast-rgb: var(--ion-color-secondary-contrast-rgb, 255, 255, 255) !important;
+    --ion-color-shade: var(--ion-color-secondary-shade, #36abe0) !important;
+    --ion-color-tint: var(--ion-color-secondary-tint, #50c8ff) !important;
+    --knob-background: var(--background-color, #ffffff) !important;
   }
 
 `;
 
-// snaps="true" step="10"
-
 const HtmlContent = `
-  <ion-range min="0" max="100" pin="true" color="secondary">
-  </ion-range>                      
+  <ion-range mode="ios" min="0" max="100" pin="true" color="secondary">
+  </ion-range>
 `
 
 export class SliderComponent extends HTMLElement {
@@ -68,7 +67,7 @@ export class SliderComponent extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return ['data-value'];
+    return ['data-value', 'data-snap', 'data-step'];
   }
 
   attributeChangedCallback() {
@@ -77,7 +76,7 @@ export class SliderComponent extends HTMLElement {
 
   init() {
 
-    const propertyValue = zySdk.services.factory.getPropertyValue(this, 'value')
+    const propertyValue = zySdk.services.component.getPropertyValue(this, 'value')
 
     zySdk.services.dictionary.onChange(propertyValue, () => {
       this.refresh()
@@ -98,7 +97,7 @@ export class SliderComponent extends HTMLElement {
 
     setTimeout( () => {
       
-      const propertyValue = zySdk.services.factory.getPropertyValue(this, 'value')
+      const propertyValue = zySdk.services.component.getPropertyValue(this, 'value')
   
       let value = zySdk.services.dictionary.getValue(propertyValue)
   
@@ -110,6 +109,15 @@ export class SliderComponent extends HTMLElement {
   
       if(slider) {
         slider.value = value
+
+        const snap = zySdk.services.component.getPropertyValueAsText(this, 'snap')
+        slider.setAttribute('snaps', snap)
+
+        const step = zySdk.services.component.getPropertyValueAsText(this, 'step')
+        slider.setAttribute('step', step)
+
+        slider.setAttribute('ticks', 'true')
+
       }
     })
 

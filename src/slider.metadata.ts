@@ -16,10 +16,25 @@ export const SliderMetadata: ComponentMetadataModel = {
   properties: [{
     id: 'value',
     name: 'Value',
-    type: PropertyTypes.Number,
-    tootip: 'The progression between 1 and 100',
+    type: 'number',
+    tootip: 'The value between 1 and 100',
     default: '50',
-    main: true
+    main: true,
+    write: true
+  }, {
+    id: 'snap',
+    name: 'Snap',
+    type: 'boolean',
+    tootip: 'Snap the values',
+    default: 'false',
+    write: false
+  }, {
+    id: 'step',
+    name: 'Step',
+    type: 'number',
+    tootip: 'Step',
+    default: '10',
+    write: false
   }],
   styles: [{
     id: 'width',
@@ -32,6 +47,12 @@ export const SliderMetadata: ComponentMetadataModel = {
     name: 'Height',
     type: 'height',
     default: '100px'
+  },
+  {
+    id: '--background-color',
+    name: 'Color',
+    type: 'background-color',
+    default: '#ffffff'
   }
   ]
 }

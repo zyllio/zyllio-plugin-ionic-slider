@@ -9,7 +9,7 @@ module.exports = {
     filename: 'plugin.js'
   },
   mode: 'production',
-  // devtool: 'source-map',
+  devtool: 'source-map',
   module: {
     rules: [
       {
