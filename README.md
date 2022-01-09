@@ -8,6 +8,11 @@ The property `value` is updated by the Slider component
 
 <img src="./snapshots/demo.gif">
 
+# Experiment
+
+Install this pre-built file to experiment the plugin:
+> `https://zyllio.github.io/zyllio-plugin-ionic-slider/dist/plugin.js`
+
 # Development environment
 
 To build this plugin, Node.js 14+ is required
