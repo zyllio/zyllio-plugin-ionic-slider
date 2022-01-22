@@ -4,8 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "build": "webpack",
-    "deploy": "copyfiles -f ./dist/plugin.js* ../zyllio-studio/client-app/src/assets"
+    "build": "webpack && copyfiles -f src/plugin.json dist"
   },
   "keywords": [],
   "author": "",
