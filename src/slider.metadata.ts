@@ -9,8 +9,8 @@ export const SliderMetadata: ComponentMetadataModel = {
   id: 'custom-slider',
   icon: IconData,
   label: 'Slider',
-  category: 'Basics',
-  subCategory: 'Plugins',
+  category: 'Plugins',
+  subCategory: 'Sliders',
   hidden: false,
   keepRatio: false,
   properties: [{
