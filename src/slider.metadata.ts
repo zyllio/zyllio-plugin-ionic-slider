@@ -12,7 +12,6 @@ export const SliderMetadata: ComponentMetadataModel = {
   category: 'Plugins',
   subCategory: 'Sliders',
   hidden: false,
-  keepRatio: false,
   properties: [{
     id: 'value',
     name: 'Value',
@@ -37,18 +36,6 @@ export const SliderMetadata: ComponentMetadataModel = {
     write: false
   }],
   styles: [{
-    id: 'width',
-    name: 'Width',
-    type: 'width',
-    default: '340px'
-  },
-  {
-    id: 'height',
-    name: 'Height',
-    type: 'height',
-    default: '100px'
-  },
-  {
     id: '--background-color',
     name: 'Color',
     type: 'background-color',

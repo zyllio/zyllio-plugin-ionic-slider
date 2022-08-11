@@ -5,8 +5,13 @@ import { SliderMetadata } from "./slider.metadata";
 console.log('Plugin Slider started')
 
 const CssContent = `
+
   :host {
     overflow: hidden;
+    width: 100%;
+    height: 120px;
+    padding: 10px;
+    box-sizing: border-box;
   }
 
   .content {
