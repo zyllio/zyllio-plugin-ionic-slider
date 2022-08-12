@@ -34,7 +34,7 @@ const CssContent = `
     --ion-color-base: var(--secondary-color) !important;
     --ion-color-primary: var(--tertiary-color)  !important;
     --bar-background: var(--tertiary-color) !important;
-    --ion-text-color: var(--color) !important;
+    --ion-text-color: var(--text-color) !important;
   }
 
 `;
