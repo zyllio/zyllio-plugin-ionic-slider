@@ -24,14 +24,17 @@ const CssContent = `
 
   .ion-color-secondary {
     font-family: 'Roboto';
-    --ion-color-base: var(--ion-color-secondary, #3dc2ff) !important;
+    --ion-color-base: var(--tertiary-color) !important;
     --ion-color-base-rgb: var(--ion-color-secondary-rgb, 61, 194, 255) !important;
     --ion-color-contrast: var(--ion-color-secondary-contrast, #fff) !important;
     --ion-color-contrast-rgb: var(--ion-color-secondary-contrast-rgb, 255, 255, 255) !important;
     --ion-color-shade: var(--ion-color-secondary-shade, #36abe0) !important;
     --ion-color-tint: var(--ion-color-secondary-tint, #50c8ff) !important;
     --knob-background: var(--secondary-color) !important;
-    --ion-text-color-rgb: var(--secondary-color) !important;
+    --ion-text-color-rgb: var(--tertiary-color) !important;
+    --ion-color-primary: var(--tertiary-color) !important;
+    --bar-background: var(--tertiary-color) !important;
+
   }
 
 `;

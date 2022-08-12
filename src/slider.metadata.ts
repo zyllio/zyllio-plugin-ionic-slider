@@ -25,15 +25,13 @@ export const SliderMetadata: ComponentMetadataModel = {
     name: 'Snap',
     type: 'boolean',
     tootip: 'Snap the values',
-    default: 'false',
-    write: false
+    default: 'true'
   }, {
     id: 'step',
     name: 'Step',
     type: 'number',
     tootip: 'Step',
-    default: '10',
-    write: false
+    default: '10'
   }],
   styles: [{
     id: '--background-color',
