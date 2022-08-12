@@ -14,8 +14,8 @@
     "@ionic/core": "^6.0.1"
   },
   "devDependencies": {
-    "@zyllio/zy-sdk": "latest",
     "@zyllio/zy-cli": "latest",
+    "@zyllio/zy-sdk": "latest",
     "copyfiles": "^2.4.1",
     "ts-loader": "^9.2.6",
     "typescript": "^4.5.4",

@@ -9,7 +9,7 @@ const CssContent = `
   :host {
     overflow: hidden;
     width: 100%;
-    height: 120px;
+    height: 100px;
     padding: 10px;
     box-sizing: border-box;
   }
@@ -30,7 +30,8 @@ const CssContent = `
     --ion-color-contrast-rgb: var(--ion-color-secondary-contrast-rgb, 255, 255, 255) !important;
     --ion-color-shade: var(--ion-color-secondary-shade, #36abe0) !important;
     --ion-color-tint: var(--ion-color-secondary-tint, #50c8ff) !important;
-    --knob-background: var(--background-color, #ffffff) !important;
+    --knob-background: var(--secondary-color) !important;
+    --ion-text-color-rgb: var(--secondary-color) !important;
   }
 
 `;
