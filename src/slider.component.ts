@@ -31,10 +31,10 @@ const CssContent = `
     --ion-color-tint: var(--ion-color-secondary-tint, #50c8ff) !important;
     --knob-background: #fff !important;
     
-    --ion-color-base: var(--secondary-color) !important;
-    --ion-color-primary: var(--tertiary-color)  !important;
-    --bar-background: var(--tertiary-color) !important;
-    --ion-text-color: var(--text-color) !important;
+    --ion-color-base: var(--theme-secondary-color) !important;
+    --ion-color-primary: var(--theme-tertiary-color)  !important;
+    --bar-background: var(--theme-tertiary-color) !important;
+    --ion-text-color: var(--theme-text-color) !important;
   }
 
 `;
