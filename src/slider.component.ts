@@ -29,7 +29,7 @@ const CssContent = `
     --ion-color-contrast-rgb: var(--ion-color-secondary-contrast-rgb, 255, 255, 255) !important;
     --ion-color-shade: var(--ion-color-secondary-shade, #36abe0) !important;
     --ion-color-tint: var(--ion-color-secondary-tint, #50c8ff) !important;
-    --knob-background: #fff !important;
+    --knob-background: var(--color) !important;
     
     --ion-color-base: var(--theme-secondary-color) !important;
     --ion-color-primary: var(--theme-tertiary-color)  !important;

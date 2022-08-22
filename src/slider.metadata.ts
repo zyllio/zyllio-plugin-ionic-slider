@@ -34,9 +34,9 @@ export const SliderMetadata: ComponentMetadataModel = {
     default: '10'
   }],
   styles: [{
-    id: '--background-color',
+    id: '--color',
     name: 'Color',
-    type: 'background-color',
+    type: 'color',
     default: '#ffffff'
   }]
 }
