@@ -104,11 +104,11 @@ export class SliderComponent extends HTMLElement {
 
   refresh() {
 
-    setTimeout(() => {
+    setTimeout( async () => {
 
       const propertyValue = zySdk.services.component.getPropertyValue(this, 'value')
 
-      let value = zySdk.services.dictionary.getValue(propertyValue)
+      let value = await zySdk.services.dictionary.getValue(propertyValue)
 
       if (value === undefined) {
         value = 0
