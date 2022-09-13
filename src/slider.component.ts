@@ -119,10 +119,10 @@ export class SliderComponent extends HTMLElement {
       if (slider) {
         slider.value = value
 
-        const snap = zySdk.services.component.getPropertyValueAsText(this, 'snap')
+        const snap = await zySdk.services.component.getPropertyValueAsText(this, 'snap')
         slider.setAttribute('snaps', snap)
 
-        const step = zySdk.services.component.getPropertyValueAsText(this, 'step')
+        const step = await zySdk.services.component.getPropertyValueAsText(this, 'step')
         slider.setAttribute('step', step)
 
         slider.setAttribute('ticks', 'true')
