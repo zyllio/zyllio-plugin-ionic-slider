@@ -1,5 +1,3 @@
-/// <reference types="@zyllio/zy-sdk" />
-
 import { SliderMetadata } from "./slider.metadata";
 
 console.log('Plugin Slider started')
@@ -108,16 +106,12 @@ export class SliderComponent extends HTMLElement {
 
       const propertyValue = zySdk.services.component.getPropertyValue(this, 'value')
 
-      let value = await zySdk.services.dictionary.getValue(propertyValue)
-
-      if (value === undefined) {
-        value = 0
-      }
+      let value = await zySdk.services.dictionary.getValue(propertyValue) as string
 
       const slider = this.shadow.querySelector('ion-range')
 
       if (slider) {
-        slider.value = value
+        slider.value = (value === undefined) ? value : 0
 
         const snap = await zySdk.services.component.getPropertyValueAsText(this, 'snap')
         slider.setAttribute('snaps', snap)
@@ -126,10 +120,8 @@ export class SliderComponent extends HTMLElement {
         slider.setAttribute('step', step)
 
         slider.setAttribute('ticks', 'true')
-
       }
     })
-
   }
 }
 
