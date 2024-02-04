@@ -108,6 +108,7 @@ export class SliderComponent extends HTMLElement {
     console.log('value', value)
 
     const slider = this.shadow.querySelector('ion-range')
+    console.log('slider', slider)
 
     if (slider) {
 
