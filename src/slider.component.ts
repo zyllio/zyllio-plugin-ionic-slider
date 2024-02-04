@@ -80,7 +80,7 @@ export class SliderComponent extends HTMLElement {
   }
 
   attributeChangedCallback() {
-    this.refresh()
+    setTimeout(() => this.refresh())
   }
 
   init() {
