@@ -8,6 +8,7 @@ const IconData = `
 
 export const SliderMetadata: ComponentMetadataModel = {
   id: 'custom-slider',
+  metadataVersion: 2,
   icon: IconData,
   label: 'Slider',
   category: 'Plugins',

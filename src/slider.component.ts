@@ -74,7 +74,7 @@ export class SliderComponent extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return ['data-value', 'data-snap', 'data-step'];
+    return ['value', 'snap', 'step'];
   }
 
   attributeChangedCallback() {
@@ -83,11 +83,11 @@ export class SliderComponent extends HTMLElement {
 
   init() {
 
-    const propertyValue = zySdk.services.component.getPropertyValue(this, 'value')
+    // const propertyValue = zySdk.services.component.getPropertyValue(this, 'value')
 
-    zySdk.services.dictionary.onChange(propertyValue, () => {
-      this.refresh()
-    })
+    // zySdk.services.dictionary.onChange(propertyValue, () => {
+    //   this.refresh()
+    // })
 
     const slider = this.shadow.querySelector('ion-range')
 
@@ -95,7 +95,7 @@ export class SliderComponent extends HTMLElement {
 
       const value = (event as CustomEvent).detail.value
 
-      zySdk.services.dictionary.setValue(propertyValue, value)
+      // zySdk.services.dictionary.setValue(propertyValue, value)
     })
 
   }
@@ -104,9 +104,14 @@ export class SliderComponent extends HTMLElement {
 
     setTimeout( async () => {
 
-      const propertyValue = zySdk.services.component.getPropertyValue(this, 'value')
+      // const propertyValue = zySdk.services.component.getPropertyValue(this, 'value')
 
-      let value = await zySdk.services.dictionary.getValue(propertyValue) as string
+      // let value = await zySdk.services.dictionary.getValue(propertyValue) as string
+
+      // let value = this['value']
+      console.log('this', this)
+
+      let value = 0
 
       const slider = this.shadow.querySelector('ion-range')
 
