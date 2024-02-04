@@ -34,7 +34,7 @@ const CssContent = `
 `;
 
 const HtmlContent = `
-  <ion-range mode="ios" min="0" max="100" pin="true" color="secondary">
+  <ion-range mode="ios" min="0" max="100" pin="true" color="secondary" value="45">
   </ion-range>
 `
 
@@ -100,17 +100,17 @@ export class SliderComponent extends HTMLElement {
     if (slider) {
 
       // slider.value = 50 // (value === undefined) ? parseInt(value) : 0
-      slider.setAttribute('value', '25')
+      // slider.setAttribute('value', '25')
 
-      const snap = this.getAttribute('snap')
+      // const snap = this.getAttribute('snap')
 
-      slider.setAttribute('snaps', snap!)
+      // slider.setAttribute('snaps', snap!)
 
-      const step = this.getAttribute('step')
+      // const step = this.getAttribute('step')
 
-      slider.setAttribute('step', step!)
+      // slider.setAttribute('step', step!)
 
-      slider.setAttribute('ticks', 'true')
+      // slider.setAttribute('ticks', 'true')
     }
   }
 }
