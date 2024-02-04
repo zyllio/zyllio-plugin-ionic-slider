@@ -77,7 +77,7 @@ export class SliderComponent extends HTMLElement {
 
     const step = this.getAttribute('step')
 
-    const value = this.getAttribute('step')
+    const value = this.getAttribute('value')
 
     return `
       <ion-range mode="ios" min="0" max="100" pin="true" color="secondary" ticks="true" step="${step}" snap="${snap}" value="${value}">
