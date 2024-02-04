@@ -38,7 +38,7 @@ const CssContent = `
 `;
 
 const HtmlContent = `
-22
+23
 
   <ion-range mode="ios" min="0" max="100" pin="true" color="secondary">
   </ion-range>
@@ -105,6 +105,7 @@ export class SliderComponent extends HTMLElement {
   refresh() {
 
     let value = this.getAttribute('value')
+    console.log('value', value)
 
     const slider = this.shadow.querySelector('ion-range')
 
