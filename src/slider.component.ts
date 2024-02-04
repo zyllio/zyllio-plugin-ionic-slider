@@ -111,7 +111,7 @@ export class SliderComponent extends HTMLElement {
 
     if (slider) {
 
-      slider.value = (value === undefined) ? parseInt(value) : 0
+      slider.value = 50 // (value === undefined) ? parseInt(value) : 0
 
       const snap = this.getAttribute('snap')
 
