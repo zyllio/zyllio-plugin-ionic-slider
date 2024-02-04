@@ -80,7 +80,7 @@ export class SliderComponent extends HTMLElement {
   }
 
   attributeChangedCallback() {
-    setTimeout(() => this.refresh())
+    this.refresh()
   }
 
   init() {
@@ -112,7 +112,8 @@ export class SliderComponent extends HTMLElement {
 
     if (slider) {
 
-      slider.value = 50 // (value === undefined) ? parseInt(value) : 0
+      // slider.value = 50 // (value === undefined) ? parseInt(value) : 0
+      slider.setAttribute('value', value!)
 
       const snap = this.getAttribute('snap')
 
