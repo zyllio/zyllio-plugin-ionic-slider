@@ -33,11 +33,6 @@ const CssContent = `
 
 `;
 
-const HtmlContent = `
-  <ion-range mode="ios" min="0" max="100" pin="true" color="secondary" value="45">
-  </ion-range>
-`
-
 export class SliderComponent extends HTMLElement {
 
   shadow: ShadowRoot
@@ -54,7 +49,6 @@ export class SliderComponent extends HTMLElement {
     this.htmlElement = document.createElement('div');
     this.htmlElement.className = 'content';
     this.styleElement = document.createElement('style');
-    this.htmlElement.innerHTML = HtmlContent
   }
 
   connectedCallback() {
@@ -77,6 +71,23 @@ export class SliderComponent extends HTMLElement {
     this.refresh()
   }
 
+  getHtmlTemplate() {
+
+    const snap = this.getAttribute('snap')
+
+    const step = this.getAttribute('step')
+
+    const value = this.getAttribute('step')
+
+    return `
+      <ion-range mode="ios" min="0" max="100" pin="true" color="secondary" ticks="true" step="${step}" snap="${snap}" value="${value}">
+      </ion-range>`
+  }
+
+  refresh() {
+    this.htmlElement.innerHTML = this.getHtmlTemplate()
+  }
+
   init() {
 
     const slider = this.shadow.querySelector('ion-range')
@@ -90,29 +101,6 @@ export class SliderComponent extends HTMLElement {
 
   }
 
-  refresh() {
-
-    let value = this.getAttribute('value')
-    console.log('value', value)
-
-    const slider = this.shadow.querySelector('ion-range')
-
-    if (slider) {
-
-      // slider.value = 50 // (value === undefined) ? parseInt(value) : 0
-      slider.setAttribute('value', '25')
-
-      // const snap = this.getAttribute('snap')
-
-      // slider.setAttribute('snaps', snap!)
-
-      // const step = this.getAttribute('step')
-
-      // slider.setAttribute('step', step!)
-
-      // slider.setAttribute('ticks', 'true')
-    }
-  }
 }
 
 zySdk.services.registry.registerComponent(SliderMetadata, SliderComponent)
