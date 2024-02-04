@@ -38,6 +38,8 @@ const CssContent = `
 `;
 
 const HtmlContent = `
+22
+
   <ion-range mode="ios" min="0" max="100" pin="true" color="secondary">
   </ion-range>
 `
@@ -102,31 +104,24 @@ export class SliderComponent extends HTMLElement {
 
   refresh() {
 
-    setTimeout( async () => {
+    let value = this.getAttribute('value')
 
-      // const propertyValue = zySdk.services.component.getPropertyValue(this, 'value')
+    const slider = this.shadow.querySelector('ion-range')
 
-      // let value = await zySdk.services.dictionary.getValue(propertyValue) as string
+    if (slider) {
 
-      // let value = this['value']
-      console.log('this', this)
+      slider.value = (value === undefined) ? parseInt(value) : 0
 
-      let value = 0
+      const snap = this.getAttribute('snap')
 
-      const slider = this.shadow.querySelector('ion-range')
+      slider.setAttribute('snaps', snap!)
 
-      if (slider) {
-        slider.value = (value === undefined) ? value : 0
+      const step = this.getAttribute('step')
 
-        const snap = await zySdk.services.component.getPropertyValueAsText(this, 'snap')
-        slider.setAttribute('snaps', snap)
+      slider.setAttribute('step', step!)
 
-        const step = await zySdk.services.component.getPropertyValueAsText(this, 'step')
-        slider.setAttribute('step', step)
-
-        slider.setAttribute('ticks', 'true')
-      }
-    })
+      slider.setAttribute('ticks', 'true')
+    }
   }
 }
 

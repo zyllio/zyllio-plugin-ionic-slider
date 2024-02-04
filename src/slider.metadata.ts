@@ -39,6 +39,6 @@ export const SliderMetadata: ComponentMetadataModel = {
     id: '--color',
     name: 'Color',
     type: 'color',
-    default: '#ffffff'
+    default: 'var(--theme-secondary-color)'
   }]
 }
