@@ -16,10 +16,6 @@ const CssContent = `
     height: 100%; 
   }
 
-  :host-context(body[editor]) .content {
-    pointer-events: none;
-  }
-
   .ion-color-secondary {
     font-family: 'Roboto';
     --ion-color-base-rgb: var(--ion-color-secondary-rgb, 61, 194, 255) !important;
@@ -38,8 +34,6 @@ const CssContent = `
 `;
 
 const HtmlContent = `
-23
-
   <ion-range mode="ios" min="0" max="100" pin="true" color="secondary">
   </ion-range>
 `
@@ -85,12 +79,6 @@ export class SliderComponent extends HTMLElement {
 
   init() {
 
-    // const propertyValue = zySdk.services.component.getPropertyValue(this, 'value')
-
-    // zySdk.services.dictionary.onChange(propertyValue, () => {
-    //   this.refresh()
-    // })
-
     const slider = this.shadow.querySelector('ion-range')
 
     slider!.addEventListener('ionChange', (event: Event) => {
@@ -108,7 +96,6 @@ export class SliderComponent extends HTMLElement {
     console.log('value', value)
 
     const slider = this.shadow.querySelector('ion-range')
-    console.log('slider', slider)
 
     if (slider) {
 
