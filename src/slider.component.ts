@@ -73,17 +73,14 @@ export class SliderComponent extends HTMLElement {
 
   getHtmlTemplate() {
 
-    const snap = this.getAttribute('snap')
-    console.log('snap', snap)
+    const snaps = this.getAttribute('snaps')
 
     const step = this.getAttribute('step')
-    console.log('step', step)
 
     const value = this.getAttribute('value')
-    console.log('value', value)
 
     return `
-      <ion-range mode="ios" min="0" max="100" pin="true" color="secondary" ticks="true" step="${step}" snap="${snap}" value="${value}">
+      <ion-range mode="ios" min="0" max="100" pin="true" color="secondary" ticks="true" step="${step}" snaps="${snaps}" value="${value}">
       </ion-range>`
   }
 
@@ -98,6 +95,8 @@ export class SliderComponent extends HTMLElement {
     slider!.addEventListener('ionChange', (event: Event) => {
 
       const value = (event as CustomEvent).detail.value
+
+      this.dispatchEvent(new CustomEvent("changed", { detail: { value: value } }))
 
       // zySdk.services.dictionary.setValue(propertyValue, value)
     })

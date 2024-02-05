@@ -23,8 +23,8 @@ export const SliderMetadata: ComponentMetadataModel = {
     main: true,
     write: true
   }, {
-    id: 'snap',
-    name: 'Snap',
+    id: 'snaps',
+    name: 'Snaps',
     type: 'boolean',
     tootip: 'Snap the values',
     default: 'true'
