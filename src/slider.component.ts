@@ -92,13 +92,12 @@ export class SliderComponent extends HTMLElement {
 
     const slider = this.shadow.querySelector('ion-range')
 
-    slider!.addEventListener('ionChange', (event: Event) => {
+    slider!.addEventListener('ionKnobMoveEnd', (event: Event) => {
 
       const value = (event as CustomEvent).detail.value
 
       this.dispatchEvent(new CustomEvent("changed", { detail: { value: value } }))
 
-      // zySdk.services.dictionary.setValue(propertyValue, value)
     })
 
   }
