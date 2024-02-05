@@ -74,10 +74,13 @@ export class SliderComponent extends HTMLElement {
   getHtmlTemplate() {
 
     const snap = this.getAttribute('snap')
+    console.log('snap', snap)
 
     const step = this.getAttribute('step')
+    console.log('step', step)
 
     const value = this.getAttribute('value')
+    console.log('value', value)
 
     return `
       <ion-range mode="ios" min="0" max="100" pin="true" color="secondary" ticks="true" step="${step}" snap="${snap}" value="${value}">

@@ -12,7 +12,7 @@ export const SliderMetadata: ComponentMetadataModel = {
   icon: IconData,
   label: 'Slider',
   category: 'Plugins',
-  subCategory: 'Sliders',
+  subCategory: 'Plugins',
   hidden: false,
   properties: [{
     id: 'value',
