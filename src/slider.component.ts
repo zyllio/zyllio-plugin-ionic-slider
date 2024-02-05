@@ -101,7 +101,6 @@ export class SliderComponent extends HTMLElement {
     })
 
   }
-
 }
 
 zySdk.services.registry.registerComponent(SliderMetadata, SliderComponent)
